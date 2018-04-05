@@ -1,18 +1,29 @@
+require "samanage/version"
+require 'samanage/configuration'
 require 'net/smtp'
 require 'net/http'
 require 'net/https'
 require 'uri'
 require 'json'
 
-class Samanage
+module Samanage
+  class << self
+    attr_accessor :configuration
+  end
 
-  def initialize(uri, jwt)  
-    # Instance variables  
-    @samanage_uri = uri
-    @samanage_jwt = jwt
-  end  
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
 
-  def createIncident(incident_hash)
+  def self.reset
+    @configuration = Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
+  end
+
+  def self.createIncident(incident_hash)
     uri = URI.parse(@samanage_uri)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
