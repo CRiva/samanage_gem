@@ -14,14 +14,13 @@ RSpec.describe Samanage do
     }
   end
 
-
   it "has a version number" do
     expect(Samanage::VERSION).not_to be nil
   end
 
   it "Creates a Samanage Support Ticket" do
    	VCR.use_cassette("new_incident") do
-   		Samanage.createIncident(@ticket)
+   		expect(Samanage.createIncident(@ticket)).to be true
    	end
   end
 end

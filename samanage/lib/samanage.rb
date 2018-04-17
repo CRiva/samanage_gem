@@ -34,7 +34,7 @@ module Samanage
     preq.body = incident_hash.to_json
     response = http.request(preq)
     respJson = JSON.parse(response.body).to_hash
-    puts respJson.to_s
+    #puts respJson.to_s
     if response.kind_of? Net::HTTPSuccess
       puts "SuccessFully created Samanage Support Ticket.\n"
       return true
