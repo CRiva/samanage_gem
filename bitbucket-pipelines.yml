@@ -8,6 +8,7 @@ pipelines:
         script:
           - gem build samanage.gemspec
           - gem install samanage
+          - gem install bundler
           - bundle install 
           - rake spec
 
