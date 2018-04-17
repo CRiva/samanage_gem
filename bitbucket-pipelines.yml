@@ -1,0 +1,17 @@
+image: ruby:2.3.1
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - bundler
+        script:
+          - gem build samanage.gemspec
+          - gem install samanage
+          - gem install bundler
+          - bundle install 
+          - rake spec
+
+definitions:
+  caches:
+    bundler: ./vendor

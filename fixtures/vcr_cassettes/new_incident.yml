@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.samanage.com/incidents.json
+    body:
+      encoding: UTF-8
+      string: '{"incident":{"name":"Testing Samanage Gem","category":{"name":"Optional"},"priority":"None","requester":{"email":"bbogus@bogus.com"},"assignee":{"email":"bbogus@westmont.edu"},"description":"Samanage
+        Gem Test"}}'
+    headers:
+      Accept:
+      - "*/*"
+      Content-Type:
+      - application/json
+      X-Samanage-Authorization:
+      - Bearer <redacted>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Reblaze Secure Web Gateway
+      Date:
+      - Tue, 17 Apr 2018 16:30:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      P3p:
+      - CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 48b6429c-b6a1-45f3-8025-f4ab3f771af7
+      X-Runtime:
+      - '1.056563'
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":24177338,"number":6369,"name":"Testing Samanage Gem","description":"Samanage
+        Gem Test","description_no_html":"Samanage Gem Test","state":"New","priority":"None","category":{"id":490768,"name":"0ptional","default_tags":"","children":[{"id":493056,"name":"Cleanup","default_tags":"","children":null,"parent_id":490768,"default_assignee_id":-1},{"id":493057,"name":"Other","default_tags":"","children":null,"parent_id":490768,"default_assignee_id":-1}],"parent_id":null,"default_assignee_id":2147490},"subcategory":null,"assignee":{"group_id":2181319,"is_user":true,"id":1975298,"name":"Bertha
+        Bogus","disabled":false,"title":"Certified Fake Person","email":"bbogus@westmont.edu","created_at":"2016-12-20T14:27:28.000-08:00","last_login":"2018-04-11T08:32:22.000-07:00","phone":"","mobile_phone":"","department":{"id":54013,"name":"IT","description":"","default_assignee_id":-1},"role":{"id":326697,"name":"Service
+        Agent User","description":"Almost like an administrator but no access to setup.","portal":false,"show_my_tasks":false},"salt":"2cb206d4fd674f542cfea53668ff7b13722aee30","group_ids":[2181319],"custom_fields_values":[{"id":55608310,"custom_field_id":38226,"name":"Alternate
+        Email","value":"","options":"","type":1,"type_name":"Text","show_on_portal":false,"mandatory":false,"user":null}],"avatar":{"type":"initials","color":"#0bc46f","initials":"BB"},"mfa_enabled":false,"reports_to":null,"site":{"id":54332,"name":"Campus","location":"955
+        La Paz Road, Santa Barbara, CA","description":"","time_zone":"Pacific Time
+        (US \u0026 Canada)","language":"-1","business_record":{"id":34484,"name":"Default
+        Business Hours","description":"This is your initial business hours record"}}},"requester":{"id":3010487,"account_id":47267,"user_id":null,"email":"bbogus@bogus.com","name":"bbogus@bogus.com","disabled":false,"has_gravatar":false,"customer_satisfaction_survey_time":null,"avatar":{"type":"initials","color":"#ffa21e","initials":"BB"}},"created_at":"2018-04-17T09:30:25.135-07:00","updated_at":"2018-04-17T09:30:25.135-07:00","due_at":null,"sla_violations":[],"number_of_comments":0,"user_saw_all_comments":true,"is_service_request":false,"created_by":{"id":1950386,"account_id":47267,"user_id":2037170,"email":"tmapi@westmont.edu","name":"API","disabled":false,"has_gravatar":false,"customer_satisfaction_survey_time":"2017-02-01T13:53:40.000-08:00","avatar":{"type":"initials","color":"#0bc46f","initials":"AP"}},"custom":null,"href":"https://api.samanage.com/incidents/24177338-testing-samanage-gem.json","site":null,"department":null,"cc":[],"custom_fields_values":[],"incidents":[],"changes":[],"tasks":[],"time_tracks":[],"solutions":[],"assets":[],"mobiles":[],"other_assets":[],"configuration_items":[]}'
+    http_version: 
+  recorded_at: Tue, 17 Apr 2018 16:30:22 GMT
+recorded_with: VCR 4.0.0
