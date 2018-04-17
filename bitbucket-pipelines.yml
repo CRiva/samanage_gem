@@ -6,7 +6,7 @@ pipelines:
         caches:
           - bundler
         script:
-          - gem build samanage/samanage.gemspec
+          - gem build samanage.gemspec
           - gem install samanage
           - bundle install 
           - rake spec
