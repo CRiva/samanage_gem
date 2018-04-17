@@ -7,7 +7,7 @@ RSpec.describe Samanage do
   		{"name" => "Testing Samanage Gem",
          "category" => {"name" => "Optional"},
          "priority" => "None",
-         "requester" => {"email" => "bbogus@bogus.com"},
+         "requester" => {"email" => "bbogus@example.com"},
          "assignee" => {"email" => "bbogus@westmont.edu"},
          "description" => "Samanage Gem Test"
         }
