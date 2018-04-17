@@ -1,8 +1,6 @@
 # Samanage
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/samanage`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a simple interface to the [Samanage](https://www.samanage.com/api/) api to create an Incident within your samanage environment.
 
 ## Installation
 
@@ -22,7 +20,50 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Anywhere in your code, you need to configure the Samanage gem with the correct uri and Samanage token.
+
+If you are using this within a Rails application, it could be configured within `config/initializers/samanage.rb` 
+
+Configuration is easy:
+```ruby
+Samanage.configure do |conf|
+	conf.uri = "https://api.samanage.com/incidents.json"
+	conf.jwt = "Bearer <Samanage token>"
+end
+```
+
+Then to create the incident, call the `createIncident` method:
+
+```ruby
+Samanage.createIncident(@ticket)
+```
+
+The ticket is a hash that follows Samanage's [api standards](https://www.samanage.com/api/incidents/):
+```ruby
+{“incident”: {
+   “name”:”Incident_Title”,
+   “priority”:”PRIORITY”,
+   “category”:{“name”:”Incident category”},
+   “subcategory”:{“name”:”Incident subcategory”},
+   “requester”:{“email”:”demo@samanage.com”},
+   “description”:”Incident description”,
+   “due_at”:”Dec 11,2022″,
+   “assignee”:{“email”:”demo@samanage.com”},
+   “incidents”:{“incident”:[{“number”:”12345″},{“number”:”12345″}]},
+   “Problem”:[{“number”:”123″}],
+   “changes”:[{“number”:”123″}],  
+   “Solutions”:{“solution”:[{“number”:”123″}]},
+   “assets”:[{“id”:”123″}],
+   “mobiles”:[{“id”:”123″}],
+   “configuration_items”:[{“id”:”123″}],
+   “custom_fields_values”:{
+     “custom_fields_value”:[
+       {“name”:”field_name”,”value”:”content”},
+       {“name”:”field_name”,”value”:”content”}]
+   }
+ }
+}
+```
 
 ## Development
 
@@ -32,7 +73,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/samanage.
+Bug reports and pull requests are welcome on Bitbucket at https://bitbucket.org/westmont/samanage_gem/src.
 
 ## License
 

@@ -1,5 +1,5 @@
-require 'samanage/configuration'
 require 'samanage/version'
+require 'samanage/configuration'
 require 'net/smtp'
 require 'net/http'
 require 'net/https'
@@ -34,12 +34,12 @@ module Samanage
     preq.body = incident_hash.to_json
     response = http.request(preq)
     respJson = JSON.parse(response.body).to_hash
-    print respJson.to_s
+    puts respJson.to_s
     if response.kind_of? Net::HTTPSuccess
-      print "SuccessFully created Samanage Support Ticket.\n"
+      puts "SuccessFully created Samanage Support Ticket.\n"
       return true
     else 
-      print "There was an Error in creating the Samanage Support ticket.\n"
+      puts "There was an Error in creating the Samanage Support ticket.\n"
       return false
     end
   end
