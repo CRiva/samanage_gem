@@ -5,8 +5,8 @@ pipelines:
     - step:
         caches:
           - bundler
-        script: # Modify the commands below to build your repository.
-          - gem build samanage.gemspec
+        script:
+          - gem build samanage/samanage.gemspec
           - gem install samanage
           - bundle install 
           - rake spec
