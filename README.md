@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CRiva/samanage_gem.svg?branch=master)](https://travis-ci.org/CRiva/samanage_gem)
+
 Development for this gem has stopped due to [another](https://github.com/cw2908/samanage-ruby) Samanage Gem already out. Use the linked gem instead. 
 
 
