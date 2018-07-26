@@ -1,3 +1,6 @@
+Development for this gem has stopped due to [another](https://github.com/cw2908/samanage-ruby) Samanage Gem already out. Use the linked gem instead. 
+
+
 # Samanage
 
 This gem is a simple interface to the [Samanage](https://www.samanage.com/api/) api to create an Incident within your samanage environment.
